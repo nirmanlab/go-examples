@@ -1,0 +1,30 @@
+type User{
+    id:ID!
+    firstName:String!
+    lastName :String!
+}
+type Address{
+    id:ID!
+    Address:String!
+}
+type Query {
+    user:[User!]!
+}
+input NewUser{
+    firstName:String!
+    lastName:String!
+}
+input UpdateUser{
+    oldFirstname:String!
+    newFirstname:String!
+    newLastname:String!
+}
+input fname{
+    oldFirstname:String!
+    firstName:String!
+}
+type Mutation{
+    createNewUser(input:NewUser!):User!
+    updateUser(input:UpdateUser!):User!
+    updateFirstName(input:fname):User!
+}   
